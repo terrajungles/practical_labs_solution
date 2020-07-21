@@ -13,14 +13,6 @@ resource "aws_security_group" "allow_web" {
 
   ingress {
     description = "HTTP VPC"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
-
-  ingress {
-    description = "HTTP VPC"
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
@@ -51,14 +43,6 @@ resource "aws_security_group" "allow_web" {
 resource "aws_security_group" "mongo_db" {
   name        = "mongo_db"
   description = "Security group of Mongo DB"
-
-  ingress {
-    description = "HTTP VPC"
-    from_port   = 22
-    to_port     = 22
-    protocol    = "tcp"
-    cidr_blocks = ["0.0.0.0/0"]
-  }
 
   ingress {
     description     = "From Web tier"
