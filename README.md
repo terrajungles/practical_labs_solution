@@ -35,6 +35,10 @@ Provision multiple web servers with the same mongoDB instance, and a ALB to the 
 
 Shift the whole infrastructure to a VPC where the DB instance is inside the private subnet.
 
+## Useful information
+
+MongoDB port is 27017
+
 ## Useful commands
 
 ```bash
@@ -65,7 +69,7 @@ curl -X POST \
   -H "X-Parse-Application-Id: MY_APPLICATION_ID" \
   -H "Content-Type: application/json" \
   -d '{"age":37,"userName":"John Doe","email":"johndoe@example.com"}' \
-  http://ec2-18-183-228-187.ap-northeast-1.compute.amazonaws.com/parse/classes/Users
+  http://ec2-18-183-221-12.ap-northeast-1.compute.amazonaws.com/parse/classes/Users
 ```
 
 ```bash
@@ -79,9 +83,11 @@ curl -X GET \
 curl -X GET \
   -H "X-Parse-Application-Id: MY_APPLICATION_ID" \
   -H "Content-Type: application/json" \
-  http://ec2-18-183-228-187.ap-northeast-1.compute.amazonaws.com/parse/classes/Users
+  http://ec2-18-183-221-12.ap-northeast-1.compute.amazonaws.com/parse/classes/Users
 ```
 
 ```bash
-ssh -i ground-deployer.pem ec2-user@ec2-18-183-228-187.ap-northeast-1.compute.amazonaws.com
+ssh -i ground-deployer.pem ec2-user@ec2-52-197-246-81.ap-northeast-1.compute.amazonaws.com
+
+ssh -i ground-deployer.pem ec2-user@ec2-52-198-121-56.ap-northeast-1.compute.amazonaws.com
 ```
